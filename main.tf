@@ -30,7 +30,7 @@ resource "google_compute_instance" "demo_vm" {
 }
 
 resource "google_compute_firewall" "allow_ssh" {
-  name    = "allow-ssh"
+  name    = "allow-ssh-03"
   network = "default"
 
   allow {
