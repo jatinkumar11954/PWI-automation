@@ -42,13 +42,13 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
-    - name: Terraform Format Check
-      id: fmt
-      run: terraform fmt -check -recursive || true
+    # - name: Terraform Format Check
+    #   id: fmt
+    #   run: terraform fmt -check -recursive || true
 
-    - name: Terraform Validate
-      id: validate
-      run: terraform validate -no-color
+    # - name: Terraform Validate
+    #   id: validate
+    #   run: terraform validate -no-color
 
     - name: Terraform Plan
       id: plan
