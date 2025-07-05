@@ -122,6 +122,7 @@ boot_disk {
 
 resource "google_compute_firewall" "allow_pg_ssh" {
   name    = "allow-pg-ssh-01"
+
   network = "default"
 
   allow {
