@@ -4,8 +4,11 @@ resource "google_compute_instance" "postgres_vm" {
   machine_type = var.machine_type
   zone         = var.zone
 
-  boot_disk { initialize_params { image = "debian-cloud/debian-11" } }
-
+boot_disk {
+  initialize_params {
+    image = "debian-cloud/debian-11"
+  }
+}
   network_interface {
     network = "default"
     access_config {}
@@ -30,9 +33,11 @@ resource "google_compute_instance" "user_vm" {
   name         = "user-vm"
   machine_type = var.machine_type
   zone         = var.zone
-
-  boot_disk { initialize_params { image = "debian-cloud/debian-11" } }
-
+boot_disk {
+  initialize_params {
+    image = "debian-cloud/debian-11"
+  }
+}
   network_interface {
     network = "default"
     access_config {}
@@ -57,9 +62,11 @@ resource "google_compute_instance" "backup_vm" {
   name         = "backup-vm"
   machine_type = var.machine_type
   zone         = var.zone
-
-  boot_disk { initialize_params { image = "debian-cloud/debian-11" } }
-
+boot_disk {
+  initialize_params {
+    image = "debian-cloud/debian-11"
+  }
+}
   network_interface {
     network = "default"
     access_config {}
@@ -83,8 +90,11 @@ resource "google_compute_instance" "tuning_vm" {
   machine_type = var.machine_type
   zone         = var.zone
 
-  boot_disk { initialize_params { image = "debian-cloud/debian-11" } }
-
+boot_disk {
+  initialize_params {
+    image = "debian-cloud/debian-11"
+  }
+}
   network_interface {
     network = "default"
     access_config {}
