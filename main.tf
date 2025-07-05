@@ -17,15 +17,21 @@ boot_disk {
   metadata_startup_script = <<-EOT
     #!/bin/bash
     set -e
+
+    # Install Postgres
     apt-get update
     apt-get install -y postgresql postgresql-contrib
+
+    # Enable & start service
     systemctl enable postgresql
     systemctl start postgresql
 
-    sudo -u postgres psql <<SQL
-    CREATE DATABASE myappdb;
-    CREATE SCHEMA myapp AUTHORIZATION postgres;
-SQL
+    # Wait to ensure postgres is fully started
+    sleep 5
+
+    # Create DB and schema
+    sudo -u postgres psql -c "CREATE DATABASE myappdb;"
+    sudo -u postgres psql -d myappdb -c "CREATE SCHEMA myapp AUTHORIZATION postgres;"
   EOT
 }
 
