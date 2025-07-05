@@ -1,5 +1,5 @@
 project_id    = "your-gcp-project-id"
 region        = "us-central1"
 zone          = "us-central1-c"
-vm_name       = "demo-vm-03"
+vm_name       = "demo-vm-04"
 machine_type  = "e2-medium"

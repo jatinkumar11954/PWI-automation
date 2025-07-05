@@ -30,12 +30,12 @@ resource "google_compute_instance" "demo_vm" {
 }
 
 resource "google_compute_firewall" "allow_ssh" {
-  name    = "allow-ssh-03"
+  name    = "allow-ssh-04"
   network = "default"
 
   allow {
     protocol = "tcp"
-    ports    = ["22","443"]
+    ports    = ["22"]
   }
 
   source_ranges = ["0.0.0.0/0"]
